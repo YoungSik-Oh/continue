@@ -1,0 +1,416 @@
+.lotto-page {
+  padding: 1.5rem 2rem 2rem;
+  text-align: center;
+  max-width: 720px;
+  min-width: 320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.lotto-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.35rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.lotto-next-draw {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 1.25rem;
+}
+
+/* 탭 */
+.lotto-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.35rem;
+  border-radius: 12px;
+}
+
+.lotto-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lotto-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lotto-tab--active {
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.lotto-tab-icon {
+  font-size: 1rem;
+}
+
+.lotto-tab-panels {
+  min-height: 520px;
+  height: 520px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 최근 당첨 / 당첨 확인 탭에서는 스크롤 없이 전체 표시 */
+.lotto-tab-panels[data-active-tab="recent"],
+.lotto-tab-panels[data-active-tab="check"] {
+  height: auto;
+  min-height: 480px;
+  overflow: visible;
+}
+
+.lotto-tab-panel {
+  min-height: 480px;
+}
+
+.lotto-desc {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 1.25rem;
+}
+
+.lotto-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 215, 0, 0.4);
+  transition: box-shadow 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lotto-btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.lotto-btn:active {
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.4);
+}
+
+.lotto-lines {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lotto-balls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.lotto-ball {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.ball-0 {
+  background: linear-gradient(145deg, #f5c542, #e6b02a);
+}
+.ball-1 {
+  background: linear-gradient(145deg, #5cb85c, #449d44);
+}
+.ball-2 {
+  background: linear-gradient(145deg, #5bc0de, #46b8da);
+}
+.ball-3 {
+  background: linear-gradient(145deg, #f0ad4e, #ec971f);
+}
+.ball-4 {
+  background: linear-gradient(145deg, #d9534f, #c9302c);
+}
+
+/* 탭 패널 공통 */
+.lotto-recent-desc {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 1.25rem;
+}
+
+.lotto-recent-loading,
+.lotto-recent-error {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+}
+
+.lotto-recent-error {
+  color: #e57373;
+}
+
+.lotto-recent-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lotto-recent-item {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  min-width: 280px;
+  text-align: center;
+}
+
+.lotto-recent-meta {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.lotto-recent-round {
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.lotto-recent-date {
+  color: #b0b0b0;
+}
+
+.lotto-ball-bonus {
+  border: 2px dashed rgba(255, 255, 255, 0.6);
+}
+
+/* 당첨 확인 */
+.lotto-check-panel {
+  text-align: center;
+}
+
+.lotto-check-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 100;
+}
+
+.lotto-check-select-wrap {
+  position: relative;
+  z-index: 10;
+  min-width: 260px;
+}
+
+.lotto-check-label {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  font-weight: 600;
+}
+
+.lotto-check-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #383c44;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lotto-check-select-arrow {
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.lotto-check-select-list {
+  position: relative;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  background: #383c44;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  cursor: pointer;
+}
+
+.lotto-check-select-option {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.5rem;
+}
+
+.lotto-check-select-option:last-child {
+  border-bottom: none;
+}
+
+.lotto-check-select-option:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lotto-check-select-option--selected {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.lotto-check-inputs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lotto-check-input {
+  width: 44px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  -moz-appearance: textfield;
+}
+
+.lotto-check-input::-webkit-outer-spin-button,
+.lotto-check-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.lotto-check-bonus {
+  width: 60px;
+}
+
+.lotto-check-result {
+  margin-top: 1.25rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.lotto-check-result--rank-0 {
+  background: rgba(255, 255, 255, 0.08);
+  color: #b0b0b0;
+}
+
+.lotto-check-result--rank-1 {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 179, 71, 0.2));
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+}
+
+.lotto-check-result--rank-2,
+.lotto-check-result--rank-3,
+.lotto-check-result--rank-4,
+.lotto-check-result--rank-5 {
+  background: rgba(255, 255, 255, 0.12);
+  color: #a5d6a7;
+}
+
+/* 회차별 당첨금·당첨자 수 */
+.lotto-divisions {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lotto-division {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: #b0b0b0;
+}
+
+.lotto-division-rank {
+  min-width: 28px;
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.lotto-division-prize {
+  flex: 1;
+  text-align: right;
+  color: #fff;
+}
+
+.lotto-division-winners {
+  color: #999;
+}
+
+.lotto-freq-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.lotto-freq-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+}
+
+.lotto-freq-item .lotto-ball {
+  width: 32px;
+  height: 32px;
+  font-size: 0.9rem;
+}
+
+.lotto-freq-count {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
